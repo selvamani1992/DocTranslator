@@ -4,9 +4,9 @@ import docx
 from docx.oxml.ns import qn
 from translate import Translator
 import openai
-import warnings
 import streamlit as st
 from streamlit_option_menu import option_menu
+import warnings
 warnings.filterwarnings("ignore")
 
 
@@ -193,3 +193,26 @@ if selected == "Home":
 
         with open(output_docx_path, "rb") as f:
             st.download_button(label='Download', data=f, file_name=output_docx_path)
+
+elif selected == "About":
+    st.markdown('__<p style="text-align:left; font-size: 25px; color: #FAA026">Summary of Docx Translator Project</P>__',
+                unsafe_allow_html=True)
+    st.write("This Docx Translator project focused on the users to translate the docx from one language to another along with name localization.")
+    st.markdown('__<p style="text-align:left; font-size: 20px; color: #FAA026">Applications and Packages Used:</P>__',
+                    unsafe_allow_html=True)
+    st.write("  * Python")
+    st.write("  * SequenceTagger Sentence from flair.models")
+    st.write("  * Streamlit and and streamlit_option_menu")
+    st.write("  * Docx")
+    st.write("  * Translator from translate ")
+    st.write("  * Openai")
+    st.write("  * Github")
+    st.markdown('__<p style="text-align:left; font-size: 20px; color: #FAA026">For feedback/suggestion, connect with me on</P>__',
+                unsafe_allow_html=True)
+    st.subheader("LinkedIn")
+    st.write("https://www.linkedin.com/in/selvamani-a-795580266/")
+    st.subheader("Email ID")
+    st.write("selvamani.ind@gmail.com")
+    st.subheader("Github")
+    st.write("https://github.com/selvamani1992")
+    #st.balloons()
