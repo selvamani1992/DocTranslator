@@ -27,7 +27,7 @@ st.title("Docx Translator")
 tagger = SequenceTagger.load('ner')
 
 
-openai.api_key  = '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'
+openai.api_key  = st.secrets["api_key"]
 def name_extractor(doc):
     name_list = []
     for para in doc.paragraphs:
@@ -171,7 +171,7 @@ if selected == "Home":
         "Vietnam": "Vietnamese",
         "Ethiopia": "Ethiopian",
     }
-        reg = st.selectbox(label="Choose Language", options=region.keys())
+        reg = st.selectbox(label="Choose Region", options=region.keys())
         reg_select = region[reg]
 
     with c3:
