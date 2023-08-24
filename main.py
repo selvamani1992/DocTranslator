@@ -180,12 +180,13 @@ if selected == "Home":
         name_list = name_extractor(doc)
         filtered_names = remove_short_names(name_list)
         new_names = dict()
-        for name in filtered_names:
-            prompt = f"""give a alternative {reg_select} name for {name}, 
-            give only one name without any other word in English letters only"""
-            response = get_completion(prompt)
-            for m,n in zip(name.split(),response.split()):
-                new_names[m] = n
+        if len(filtered_names) > 0:
+            for name in filtered_names:
+                prompt = f"""give a alternative {reg_select} name for {name}, 
+                give only one name without any other word in English letters only"""
+                response = get_completion(prompt)
+                for m,n in zip(name.split(),response.split()):
+                    new_names[m] = n
         output_docx_path = "Translated Document.docx"
 
         final_doc = translate_docx(doc, output_docx_path, target_language,new_names)
