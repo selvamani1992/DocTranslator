@@ -2,6 +2,8 @@
 
 This project is a Python-based tool for translating text in Docx documents while preserving the structure and formatting of the original document. It also offers name localization, allowing users to provide alternative names for specific entities in the document.
 
+URL: https://doctranslator-selvamaniind.streamlit.app/
+
 ## Features
 
 - Translate text in Docx documents from one language to another.
